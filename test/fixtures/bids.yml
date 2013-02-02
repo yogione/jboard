@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  postid: 1
+  userid: 1
+  counter_offer: 1
+  comments: MyString
+
+two:
+  postid: 1
+  userid: 1
+  counter_offer: 1
+  comments: MyString

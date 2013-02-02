@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  taskname: MyString
+  userid: 1
+  amount_offered: 1
+  time_to_complete: 1
+  location_zip_code: 1
+
+two:
+  taskname: MyString
+  userid: 1
+  amount_offered: 1
+  time_to_complete: 1
+  location_zip_code: 1

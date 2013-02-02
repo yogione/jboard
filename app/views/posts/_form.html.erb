@@ -1,0 +1,38 @@
+<%= form_for @post, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :taskname, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :taskname, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :userid, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :userid, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :amount_offered, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :amount_offered, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :time_to_complete, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :time_to_complete, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :location_zip_code, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :location_zip_code, :class => 'number_field' %>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                posts_path, :class => 'btn' %>
+  </div>
+<% end %>

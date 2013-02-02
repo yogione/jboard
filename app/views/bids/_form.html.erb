@@ -1,0 +1,32 @@
+<%= form_for @bid, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :postid, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :postid, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :userid, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :userid, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :counter_offer, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :counter_offer, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :comments, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :comments, :class => 'text_field' %>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                bids_path, :class => 'btn' %>
+  </div>
+<% end %>
