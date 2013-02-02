@@ -11,7 +11,26 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130202174031) do
+ActiveRecord::Schema.define(:version => 20130202202607) do
+
+  create_table "bids", :force => true do |t|
+    t.integer  "postid"
+    t.integer  "userid"
+    t.integer  "counter_offer"
+    t.string   "comments"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  create_table "posts", :force => true do |t|
+    t.string   "taskname"
+    t.integer  "userid"
+    t.integer  "amount_offered"
+    t.integer  "time_to_complete"
+    t.integer  "location_zip_code"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
