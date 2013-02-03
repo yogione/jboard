@@ -1,5 +1,5 @@
 <div style="background-color:lightblue;">
-  <h3 >  &nbsp; &nbsp; Post a job<%#=t '.title', :default => model_class.model_name.human.pluralize %></h3>
+  <h5>  &nbsp; &nbsp; Post a job<%#=t '.title', :default => model_class.model_name.human.pluralize %></h5>
 </div>
 <%= form_for @post do |f| %>
   <div class="control-group">
@@ -9,8 +9,8 @@
     </div>
   </div>
  <div class="alignleft">
-	            <label class="control-label" for="post_taskname"><h4>  &nbsp I need help with:</h4></label>
-	            <div style="height:10px">&nbsp</div>
+	            <label class="control-label" for="post_taskname"><h5>  &nbsp I need help with:</h5></label>
+	            <div style="height:2px">&nbsp</div>
 	            <div>
 		            <div class="alignleft" style="margin-left:10px;margin-right:10px"><input src="/assets/soapbucket.jpeg" id="post_taskname" name="post[taskname]" value="house cleaning" width="50" height="50" type="image"></input></div>
 		            <div class="alignleft" style="width:10px">&nbsp</div>
@@ -28,7 +28,7 @@
 	        </div>
 	        <div class="alignleft" style="width:50px">&nbsp</div>
                  <div class="alignleft">
-	            <label class="control-label" for="post_amount_offered"><h4>I will pay:</h4></label>
+	            <label class="control-label" for="post_amount_offered"><h5>I will pay:</h5></label>
 	            <div style="height:10px">&nbsp</div>
 	            <div>
 		            <div class="alignleft" style="margin-left:10px;margin-right:10px"><input src="/assets/10d.png" id="post_amount_offered" name="post[amount_offered]" value ="10" width="50" height="50" type="image"></input></div>
@@ -47,8 +47,8 @@
 	        </div>
 	        <div class="alignleft" style="width:50px">&nbsp</div>
                   <div class="alignleft">
-	            <label class="control-label" for="post_time_to_complete"><h4> days to complete:</h4></label>
-	            <div style="height:10px">&nbsp</div>
+	            <label class="control-label" for="post_time_to_complete"><h5> days to complete:</h5></label>
+	            <div style="height:2px">&nbsp</div>
 	            <div>
 		            <div class="alignleft" style="margin-left:10px;margin-right:10px"><input src="/assets/1.png" id="post_time_to_complete" name="post[time_to_complete]" value="1" width="50" height="50" type="image"></input></div>
 		            <div class="alignleft" style="width:10px">&nbsp</div>
@@ -98,12 +98,9 @@
                 posts_path, :class => 'btn' %>
   </div>
 <% end %>
-
-
-
 <%- model_class = Post -%>
 <div style="background-color:lightblue;">
-  <h3>  &nbsp; &nbsp; Apply for Jobs close to you<%#=t '.title', :default => model_class.model_name.human.pluralize %></h3>
+  <h5>  &nbsp; &nbsp; Apply for Jobs close to you<%#=t '.title', :default => model_class.model_name.human.pluralize %></h5>
 </div>
 <table class="table table-striped">
   <thead>
@@ -144,7 +141,6 @@
     <% end %>
   </tbody>
 </table>
-
 <%= link_to t('.new', :default => t("helpers.links.new")),
             new_post_path,
             :class => 'btn btn-primary' %>
