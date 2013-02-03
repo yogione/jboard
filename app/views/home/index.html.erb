@@ -1,0 +1,92 @@
+<div class="page-header">
+  <h2>  Post a job<%#=t '.title', :default => model_class.model_name.human.pluralize %></h2>
+</div>
+<%= form_for @post, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :taskname, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :taskname, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :userid, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :userid, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :amount_offered, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :amount_offered, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :time_to_complete, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :time_to_complete, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :location_zip_code, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :location_zip_code, :class => 'number_field' %>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                posts_path, :class => 'btn' %>
+  </div>
+<% end %>
+
+
+
+<%- model_class = Post -%>
+<div class="page-header">
+  <h2>  Apply for Jobs close to you<%#=t '.title', :default => model_class.model_name.human.pluralize %></h2>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%#= model_class.human_attribute_name(:id) %></th>
+      <th>Task<%#= model_class.human_attribute_name(:taskname) %></th>
+      <th><%= model_class.human_attribute_name(:userid) %></th>
+      <th>Will Pay $$ <%#= model_class.human_attribute_name(:amount_offered) %></th>
+      <th>duration<%#= model_class.human_attribute_name(:time_to_complete) %></th>
+      <th>ZipCode<%#= model_class.human_attribute_name(:location_zip_code) %></th>
+      <th><%#= model_class.human_attribute_name(:created_at) %></th>
+      <th><%#=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @posts.each do |post| %>
+      <tr>
+        <td><%#= link_to post.id, post_path(post) %></td>
+        <td><%= post.taskname %></td>
+        <td>JohnDoe<%= post.userid %></td>
+        <td><%= post.amount_offered %></td>
+        <td><%= post.time_to_complete%> hours</td>
+        <td><%= post.location_zip_code %></td>
+        <td><%#=l post.created_at %></td>
+        <td>
+          <%#= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_post_path(post), :class => 'btn btn-mini' %>
+          <%#= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      post_path(post),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-mini btn-danger' %>
+          <%= link_to  "apply",
+                      post_path(post),
+                      :class => 'btn btn-medium btn-success' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_post_path,
+            :class => 'btn btn-primary' %>
+
