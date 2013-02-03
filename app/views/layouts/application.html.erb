@@ -7,7 +7,11 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-    <%= link_to image_tag("pigeon.jpeg",:style =>"width:10%; height:20%", :alt =>"bluepigeon"), root_path %>
+  <div style="background-color:white;"
+<%= link_to image_tag("pigeon.jpeg",:style =>"width:10%; height:10%", :alt =>"bluepigeon"), 
+    root_path %> <h4>&nbsp; &nbsp; B L U E &nbsp; P I G E O N.  get help. help others. earn pocket money. </h4>
+    &nbsp; &nbsp; <%= link_to "home", root_path %>&nbsp; &nbsp;<%= link_to "plain_link", home_index_path %>
+</div>
     <%= yield %>
 
 </body>
