@@ -3,15 +3,17 @@ source 'http://rubygems.org'
 gem 'rails', '3.2.2'
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
-gem 'sqlite3', '1.3.7'
+gem 'sqlite3', :group =>[:development, :test]
 gem 'devise'
 gem 'execjs'
 gem 'therubyracer'
 gem 'less-rails'
 gem 'heroku'
 gem 'heroku-api'
-gem 'taps'
-gem 'rvm'
+group :development do
+  gem 'taps'
+  gem 'rvm'
+end
 #gem 'twitter-bootstrap-rails'
 
 # Gems used only for assets and not required
@@ -44,4 +46,9 @@ gem 'jquery-rails'
 group :test do
   # Pretty printed test output
   gem 'turn', '0.8.2', :require => false
+end
+group :production do
+  # Pretty printed test output
+  gem 'thin'
+  gem 'pg'
 end
